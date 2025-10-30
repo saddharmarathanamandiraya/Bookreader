@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="https://i.postimg.cc/sX3pFh2v/logo.png" type="image/x-icon"/>
     <style>
-        /* All CSS styles from your code */
+        /*____ This webpage was created by Saddharmarathana Mandiraya.
+          ____ All rights reserved */
         :root {
             --primary-color: #2c3e50;
             --secondary-color: #3498db;
@@ -799,7 +800,8 @@
             border: none;
             border-radius: 12px;
             box-shadow: var(--shadow);
-            background: white;
+            /* background: white; */
+             background: var(--sidebar-bg);
             overflow: hidden;
             position: relative;
         }
@@ -813,6 +815,7 @@
             padding: 8px 12px;
             border-radius: 25px;
             border: 1px solid var(--border-color);
+            margin-left: 50px;
         }
 
         .zoom-btn {
@@ -1253,273 +1256,6 @@
         }
         /* subscribe end */
 
-        /* _________setting button star______ */
-        /* Settings Button */
-        .settings-btn {
-            background: rgba(255,255,255,0.2);
-            border: none;
-            color: white;
-            padding: 10px 12px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 18px;
-            transition: all 0.3s ease;
-            margin-left: 10px;
-        }
-
-        .settings-btn:hover {
-            background: rgba(255,255,255,0.3);
-            transform: rotate(90deg);
-        }
-
-        /* Settings Modal */
-        .settings-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 2000;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .settings-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 500px;
-            max-height: 80vh;
-            overflow-y: auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .settings-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            border-bottom: 1px solid #e0e0e0;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border-radius: 15px 15px 0 0;
-        }
-
-        .settings-header h3 {
-            margin: 0;
-            font-size: 20px;
-        }
-
-        .close-btn {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .settings-body {
-            padding: 20px;
-        }
-
-        .setting-group {
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .setting-group:last-child {
-            border-bottom: none;
-        }
-
-        .setting-group h4 {
-            margin: 0 0 15px 0;
-            color: #333;
-            font-size: 16px;
-        }
-
-        /* Theme Options */
-        .theme-options {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .themes-btn {
-            flex: 1;
-            padding: 10px 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            background: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            min-width: 80px;
-        }
-
-        .themes-btn:hover {
-            border-color: #667eea;
-            transform: translateY(-2px);
-        }
-
-        .themes-btn.active {
-            border-color: #667eea;
-            background: #667eea;
-            color: white;
-        }
-
-        /* Font Options */
-        .font-options {
-            display: flex;
-            gap: 10px;
-        }
-
-        .font-options select {
-            flex: 1;
-            padding: 8px 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background: white;
-        }
-
-        /* Toggle Switches */
-        .toggle-label {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-            cursor: pointer;
-        }
-
-        .toggle-label input {
-            display: none;
-        }
-
-        .toggle-slider {
-            width: 40px;
-            height: 20px;
-            background: #ccc;
-            border-radius: 20px;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .toggle-slider::before {
-            content: '';
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            background: white;
-            border-radius: 50%;
-            top: 2px;
-            left: 2px;
-            transition: all 0.3s ease;
-        }
-
-        .toggle-label input:checked + .toggle-slider {
-            background: #4CAF50;
-        }
-
-        .toggle-label input:checked + .toggle-slider::before {
-            transform: translateX(20px);
-        }
-
-        /* Data Buttons */
-        .data-options {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .data-btn {
-            padding: 10px 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: left;
-        }
-
-        .data-btn:hover {
-            background: #f5f5f5;
-            transform: translateX(5px);
-        }
-
-        .data-btn.clear {
-            color: #ff4444;
-            border-color: #ff4444;
-        }
-
-        .data-btn.clear:hover {
-            background: #ffebee;
-        }
-
-        /* App Info */
-        .app-info {
-            text-align: center;
-        }
-
-        .app-info p {
-            margin: 5px 0;
-            color: #666;
-        }
-
-        .feedback-btn {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #667eea;
-            border-radius: 8px;
-            background: white;
-            color: #667eea;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .feedback-btn:hover {
-            background: #667eea;
-            color: white;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Dark Theme for Settings */
-        body.dark-theme .settings-content {
-            background: #2d3748;
-            color: white;
-        }
-
-        body.dark-theme .setting-group h4 {
-            color: white;
-        }
-
-        body.dark-theme .themes-btn {
-            background: #4a5568;
-            color: white;
-            border-color: #4a5568;
-        }
-
-        body.dark-theme .data-btn {
-            background: #4a5568;
-            color: white;
-            border-color: #4a5568;
-        }
-
-        body.dark-theme .setting-group {
-            border-bottom-color: #4a5568;
-        }
-
-        /* _________setting button end______ */
-
         .lavender-book-icon {
             display: inline-block;
             width: 16px;
@@ -1712,6 +1448,7 @@
             .zoom-controls {
                 order: -1;
                 margin-bottom: 10px;
+                
             }
 
             /* Mobile bookmarks grid */
@@ -1799,348 +1536,100 @@
                 padding: 4px 8px;
             }
         }
-        /* ___________check tommoro setting button */
-        /* Settings Button */
-        .settings-btn {
-            background: rgba(255,255,255,0.2);
-            border: none;
-            color: white;
-            padding: 10px 12px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 18px;
-            transition: all 0.3s ease;
-            margin-left: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .settings-btn:hover {
-            background: rgba(255,255,255,0.3);
-            transform: rotate(90deg);
-        }
-
-        /* Settings Modal */
-        .settings-modal {
+       
+         /* _______mobil___________toggle */
+        /* Mobile Controls */
+        .mobile-controls-toggle {
             display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 2000;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .settings-modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .settings-content {
-            background: white;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 500px;
-            max-height: 80vh;
-            overflow-y: auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            animation: slideUp 0.3s ease;
-        }
-
-        .settings-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            border-bottom: 1px solid #e0e0e0;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: var(--secondary-color);
             color: white;
-            border-radius: 15px 15px 0 0;
-        }
-
-        .settings-header h3 {
-            margin: 0;
-            font-size: 20px;
-            font-weight: 600;
-        }
-
-        .close-btn {
-            background: none;
             border: none;
-            color: white;
-            font-size: 24px;
+            padding: 12px 20px;
+            border-radius: 25px;
             cursor: pointer;
-            padding: 5px;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s ease;
-        }
-
-        .close-btn:hover {
-            background: rgba(255,255,255,0.2);
-        }
-
-        .settings-body {
-            padding: 20px;
-        }
-
-        .setting-group {
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .setting-group:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-        }
-
-        .setting-group h4 {
-            margin: 0 0 15px 0;
-            color: #333;
-            font-size: 16px;
             font-weight: 600;
+            margin-bottom: 10px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: var(--transition);
         }
 
-        /* Theme Options */
-        .theme-options {
+        .mobile-controls-toggle:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .controls-container {
             display: flex;
-            gap: 10px;
             flex-wrap: wrap;
-        }
-
-        .themes-btn {
-            flex: 1;
-            padding: 10px 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            background: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            min-width: 80px;
-            font-weight: 500;
-        }
-
-        .themes-btn:hover {
-            border-color: #667eea;
-            transform: translateY(-2px);
-        }
-
-        .themes-btn.active {
-            border-color: #667eea;
-            background: #667eea;
-            color: white;
-        }
-
-        /* Font Options */
-        .font-options select {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            background: white;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        /* Toggle Switches */
-        .toggle-label {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-            cursor: pointer;
-            padding: 5px 0;
-        }
-
-        .toggle-label:last-child {
-            margin-bottom: 0;
-        }
-
-        .toggle-label input {
-            display: none;
-        }
-
-        .toggle-slider {
-            width: 44px;
-            height: 22px;
-            background: #ccc;
-            border-radius: 20px;
-            position: relative;
-            transition: all 0.3s ease;
-            flex-shrink: 0;
-        }
-
-        .toggle-slider::before {
-            content: '';
-            position: absolute;
-            width: 18px;
-            height: 18px;
-            background: white;
-            border-radius: 50%;
-            top: 2px;
-            left: 2px;
-            transition: all 0.3s ease;
-        }
-
-        .toggle-label input:checked + .toggle-slider {
-            background: #4CAF50;
-        }
-
-        .toggle-label input:checked + .toggle-slider::before {
-            transform: translateX(22px);
-        }
-
-        /* Data Buttons */
-        .data-options {
-            display: flex;
-            flex-direction: column;
             gap: 10px;
+            align-items: center;
         }
 
-        .data-btn {
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: left;
-            font-weight: 500;
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .mobile-controls-toggle {
+                display: flex;
+            }
+            
+            .controls-container {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                gap: 12px;
+                padding: 15px;
+                background: var(--sidebar-bg);
+                border-radius: 12px;
+                border: 1px solid var(--border-color);
+                margin-top: 10px;
+                box-shadow: var(--shadow);
+            }
+            
+            .controls-container.active {
+                display: flex;
+                animation: slideDown 0.3s ease;
+            }
+            
+            .book-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .book-reader-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .book-title {
+                order: -1;
+                text-align: center;
+                width: 100%;
+            }
+            
+            .zoom-controls,
+            .dark-layer-controls,
+            .brown-theme-controls {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .book-action-btn {
+                width: 100%;
+                justify-content: center;
+            }
         }
 
-        .data-btn:hover {
-            background: #f5f5f5;
-            transform: translateX(5px);
-        }
-
-        .data-btn.clear {
-            color: #ff4444;
-            border-color: #ff4444;
-        }
-
-        .data-btn.clear:hover {
-            background: #ffebee;
-        }
-
-        /* App Info */
-        .app-info {
-            text-align: center;
-        }
-
-        .app-info p {
-            margin: 5px 0;
-            color: #666;
-        }
-
-        .feedback-btn {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #667eea;
-            border-radius: 8px;
-            background: white;
-            color: #667eea;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .feedback-btn:hover {
-            background: #667eea;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideUp {
+        @keyframes slideDown {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(-10px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
-            }
-        }
-
-        /* Dark Theme for Settings */
-        body.dark-mode .settings-content {
-            background: #2d2d2d;
-            color: white;
-        }
-
-        body.dark-mode .setting-group h4 {
-            color: white;
-        }
-
-        body.dark-mode .themes-btn {
-            background: #3d3d3d;
-            color: white;
-            border-color: #4d4d4d;
-        }
-
-        body.dark-mode .font-options select {
-            background: #3d3d3d;
-            color: white;
-            border-color: #4d4d4d;
-        }
-
-        body.dark-mode .data-btn {
-            background: #3d3d3d;
-            color: white;
-            border-color: #4d4d4d;
-        }
-
-        body.dark-mode .setting-group {
-            border-bottom-color: #4d4d4d;
-        }
-
-        body.dark-mode .feedback-btn {
-            background: #3d3d3d;
-            color: #667eea;
-            border-color: #667eea;
-        }
-
-        body.dark-mode .feedback-btn:hover {
-            background: #667eea;
-            color: white;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .settings-content {
-                width: 95%;
-                margin: 5% auto;
-            }
-
-            .theme-options {
-                flex-direction: column;
-            }
-
-            .settings-header {
-                padding: 15px;
-            }
-
-            .settings-body {
-                padding: 15px;
-            }
-
-            .themes-btn {
-                min-width: auto;
             }
         }
     </style>
@@ -4605,7 +4094,7 @@
         </a>            
     </li>
 </ul>
-  <!-- ජාතක පොත් -->
+<!-- ජාතක පොත් -->
                 <div class="category-header" onclick="toggleCategory(this)">
                     <i class="fa-regular fa-folder red-folder"></i> ධම්මපදය
                 </div>
@@ -4676,7 +4165,7 @@
            <span class="favorite-star" onclick="toggleFavorite(this, '16Vq3JtPw9Gqt20R-pmOoNw7YLJvs9WT9')">⭐</span>
         </a>            
     </li>
-                     <li> 
+    <li> 
         <a href="#" class="book-link" data-id="16Vq3JtPw9Gqt20R-pmOoNw7YLJvs9WT9" 
            data-url="https://drive.google.com/file/d/1eXhdZLQ1F8oX760vaOslIRfnzp5TmeS6/preview" 
            onclick="openBook(this)">
@@ -4698,7 +4187,7 @@
            <span class="favorite-star" onclick="toggleFavorite(this, '16Vq3JtPw9Gqt20R-pmOoNw7YLJvs9WT9')">⭐</span>
         </a>            
     </li>
-                </ul>                   
+</ul> 
  <div class="category-header" onclick="toggleCategory(this)">
                         <i class="fa-regular fa-folder blue-folder"></i> නාවල ධම්මානන්ද මහාස්ථවිර
                     </div>
@@ -7199,52 +6688,80 @@
                 <div class="no-book-subtext">කියවීමට පොතක් තෝරන්න</div>
             </div>
             <div id="bookReaderContainer" class="book-reader-container" style="display: none;">
-                <div class="book-reader-header">
-                    <div class="book-title" id="currentBookTitle">පොත් තෝරාගෙන ඇත</div>
-                    <div class="book-actions">
+                <div class="book-actions">
+                    <button class="mobile-controls-toggle" type="button" id="mobileControlsToggle" 
+                            onclick="toggleMobileControls()" aria-label="සැකසුම්" title="සැකසුම්">
+                        <i class="fas fa-sliders-h"></i>
+                       
+                        <span>සැකසුම්</span>
+                        
+                    </button>
+                    
+                    
+                    
+                    <div class="controls-container" id="controlsContainer">
                         <div class="zoom-controls">
-                            <button class="zoom-btn" onclick="zoomOut()" title="කුඩා කරන්න">
+                            <button class="zoom-btn" type="button" onclick="zoomOut()" 
+                                    aria-label="කුඩා කරන්න" title="කුඩා කරන්න">
                                 <i class="fas fa-search-minus"></i>
                             </button>
                             <span class="zoom-level" id="zoomLevel">100%</span>
-                            <button class="zoom-btn" onclick="zoomIn()" title="ලොකු කරන්න">
+                            <button class="zoom-btn" type="button" onclick="zoomIn()" 
+                                    aria-label="ලොකු කරන්න" title="ලොකු කරන්න">
                                 <i class="fas fa-search-plus"></i>
                             </button>
                         </div>
-                        <button class="book-action-btn" onclick="resetZoom()" title="සාමාන්‍ය ප්‍රමාණය">
+                        
+                        <button class="book-action-btn" type="button" onclick="resetZoom()" 
+                                aria-label="සාමාන්‍ය ප්‍රමාණය" title="සාමාන්‍ය ප්‍රමාණය">
                             <i class="fas fa-expand-arrows-alt"></i>
                         </button>
                         
-                        <!-- Dark Theme Controls -->
                         <div class="dark-layer-controls">
-                            <button class="dark-layer-btn" onclick="toggleDarkLayer()" title="අඳුරු ස්ථරය" id="darkLayerBtn">
+                            <button class="dark-layer-btn" type="button" onclick="toggleDarkLayer()" 
+                                    aria-label="අඳුරු ස්ථරය" title="අඳුරු ස්ථරය" id="darkLayerBtn">
                                 <i class="fas fa-moon"></i>
                             </button>
                             <input type="range" class="dark-layer-slider" id="darkLayerSlider" 
-                                   min="0" max="100" value="0" oninput="updateDarkLayer(this.value)">
+                                   min="0" max="100" value="0" oninput="updateDarkLayer(this.value)"
+                                   aria-label="අඳුරු ස්ථරයේ ප්‍රමාණය" title="අඳුරු ස්ථරයේ ප්‍රමාණය">
                             <span class="dark-layer-percentage" id="darkLayerPercentage">0%</span>
                         </div>
-                        <!-- Brown Theme Controls -->
+                        
                         <div class="brown-theme-controls">
-                            <button class="brown-theme-btn" onclick="toggleBrownTheme()" title="තැඹිලි පසුබිම" id="brownThemeBtn">
+                            <button class="brown-theme-btn" type="button" onclick="toggleBrownTheme()" 
+                                    aria-label="තැඹිලි පසුබිම" title="තැඹිලි පසුබිම" id="brownThemeBtn">
                                 <i class="fas fa-seedling"></i>
                             </button>
                             <input type="range" class="brown-theme-slider" id="brownThemeSlider" 
-                                   min="0" max="100" value="0" oninput="updateBrownTheme(this.value)">
+                                   min="0" max="100" value="0" oninput="updateBrownTheme(this.value)"
+                                   aria-label="තැඹිලි පසුබිමේ ප්‍රමාණය" title="තැඹිලි පසුබිමේ ප්‍රමාණය">
                             <span class="brown-theme-percentage" id="brownThemePercentage">0%</span>
                         </div>
-                        <button class="book-action-btn" onclick="goToBookHome()" title="පොතේ මුල් පිටුව">
+                        
+                        <button class="book-action-btn" type="button" onclick="goToBookHome()" 
+                                aria-label="පොතේ මුල් පිටුව" title="පොතේ මුල් පිටුව">
                             <i class="fas fa-home"></i>
                         </button>
-                        <button class="book-action-btn" onclick="closeBook()">
+                        
+                        <button class="book-action-btn" type="button" onclick="closeBook()" 
+                                aria-label="පොත වසන්න" title="පොත වසන්න">
                             <i class="fas fa-times"></i> වසන්න
                         </button>
-                        <button class="book-action-btn" onclick="downloadBook()">
+                        
+                        <button class="book-action-btn" type="button" onclick="downloadBook()" 
+                                aria-label="පොත බාගන්න" title="පොත බාගන්න">
                             <i class="fas fa-download"></i> බාගන්න
                         </button>
-                        <button class="book-action-btn" onclick="toggleSidebar()">
+                        
+                        <button class="book-action-btn" type="button" onclick="toggleSidebar()" 
+                                aria-label="සයිඩ්බාර්" title="සයිඩ්බාර්">
                             <i class="fas fa-bars"></i> සයිඩ්බාර්
                         </button>
+                         
+                    </div>
+                    <div class="book-reader-header">
+                        <div class="book-title" id="currentBookTitle">පොත් තෝරාගෙන ඇත</div>
                     </div>
                 </div>
                 <!-- Iframe with Theme Wrapper -->
@@ -8563,9 +8080,162 @@ function loadLastReadingState() {
 console.log('📚 Book Reader JavaScript loaded successfully!');
 
   </script>
+  <script>
+    // ___________mobile________toggle
+  // DOM Elements
+        
+        const mobileControlsToggle = document.getElementById('mobileControlsToggle');
+        const controlsContainer = document.getElementById('controlsContainer');
+
+        // Initialize
+        function init() {
+            updateBookmarksCount();
+            renderBookmarks();
+            loadBookmarkStates();
+            closeAllFolders();
+            updateSidebarState();
+            updateClock();
+            setInterval(updateClock, 1000);
+            loadTheme();
+            
+            // Load bookmarks view preference
+            const savedView = localStorage.getItem('bookmarksView') || 'grid';
+            state.bookmarksView = savedView;
+            updateBookmarksView();
+            
+            // Add event delegation for bookmark clicks
+            setupBookmarkEventDelegation();
+            
+            // Initialize search functionality
+            initSearch();
+            
+            // Initialize mobile controls
+            initMobileControls();
+            
+            console.log('📚 Book Reader initialized successfully!');
+        }
+
+        // MOBILE CONTROLS FUNCTIONS - FIXED VERSION
+        function initMobileControls() {
+            console.log('🔧 Initializing mobile controls...');
+            
+            if (mobileControlsToggle && controlsContainer) {
+                // Set initial state based on screen size
+                handleMobileControlsResize();
+                
+                console.log('✅ Mobile controls initialized successfully');
+            } else {
+                console.log('❌ Mobile controls elements not found');
+            }
+        }
+
+        function handleMobileControlsResize() {
+            if (!mobileControlsToggle || !controlsContainer) return;
+            
+            if (window.innerWidth > 768) {
+                // Desktop - show controls always
+                controlsContainer.style.display = 'flex';
+                controlsContainer.classList.remove('active');
+                mobileControlsToggle.style.display = 'none';
+            } else {
+                // Mobile - show toggle button, hide controls initially
+                controlsContainer.style.display = 'none';
+                controlsContainer.classList.remove('active');
+                mobileControlsToggle.style.display = 'flex';
+                mobileControlsToggle.innerHTML = '<i class="fas fa-sliders-h"></i><span>සැකසුම්</span>';
+            }
+        }
+
+        // FIXED TOGGLE FUNCTION
+        function toggleMobileControls() {
+            console.log('📱 Toggle mobile controls clicked!');
+            
+            if (!controlsContainer || !mobileControlsToggle) {
+                console.log('❌ Controls container or toggle button not found');
+                return;
+            }
+            
+            if (controlsContainer.classList.contains('active')) {
+                // Hide controls
+                controlsContainer.classList.remove('active');
+                controlsContainer.style.display = 'none';
+                mobileControlsToggle.innerHTML = '<i class="fas fa-sliders-h"></i><span>සැකසුම්</span>';
+                console.log('🔽 Mobile controls hidden');
+            } else {
+                // Show controls
+                controlsContainer.classList.add('active');
+                controlsContainer.style.display = 'flex';
+                mobileControlsToggle.innerHTML = '<i class="fas fa-times"></i><span>වසන්න</span>';
+                console.log('🔼 Mobile controls shown');
+            }
+        }
+// ________________________________
+
+// MODIFIED OPEN BOOK FUNCTION - Add mobile controls initialization here
+function openBook(element) {
+    const bookId = element.getAttribute('data-id');
+    const bookUrl = element.getAttribute('data-url');
+    const bookTitle = element.textContent.split('⭐')[0].trim();
+    
+    state.currentBook = {
+        id: bookId,
+        title: bookTitle,
+        url: bookUrl
+    };
+    
+    currentBookTitle.textContent = bookTitle;
+    bookReader.src = bookUrl;
+    
+    noBookSelected.style.display = 'none';
+    bookReaderContainer.style.display = 'block';
+    
+    // Initialize mobile controls when book is opened
+    console.log('📖 Book opened, initializing mobile controls...');
+    initMobileControls();
+    
+    // Reset zoom and themes
+    resetZoom();
+    currentTheme = 'none';
+    themeIntensity = 0;
+    updateTheme();
+    
+    if (window.innerWidth <= 768) {
+        sidebar.classList.remove('active');
+        toggleBtn.innerHTML = '☰';
+    }
+    
+    console.log(`📖 Opening: ${bookTitle}`);
+}
+
+// Event listeners for mobile controls
+window.addEventListener('resize', handleMobileControlsResize);
+
+// Click outside to close mobile controls
+document.addEventListener('click', function(event) {
+    const controlsContainer = document.getElementById('controlsContainer');
+    const mobileControlsToggle = document.getElementById('mobileControlsToggle');
+    
+    if (window.innerWidth <= 768 && 
+        controlsContainer && 
+        controlsContainer.classList.contains('active') &&
+        !controlsContainer.contains(event.target) && 
+        mobileControlsToggle &&
+        !mobileControlsToggle.contains(event.target)) {
+        console.log('👆 Click outside - closing controls');
+        controlsContainer.classList.remove('active');
+        mobileControlsToggle.innerHTML = '<i class="fas fa-sliders-h"></i><span>සැකසුම්</span>';
+    }
+});
+
+// Initialize mobile controls when page loads (for cases where book is already open)
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if book reader is already visible and initialize mobile controls
+    if (bookReaderContainer.style.display !== 'none') {
+        setTimeout(initMobileControls, 100);
+    }
+});
+  </script>
 </body>
 
 </html>
-
-
 
