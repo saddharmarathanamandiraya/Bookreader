@@ -815,7 +815,7 @@
             padding: 8px 12px;
             border-radius: 25px;
             border: 1px solid var(--border-color);
-            margin-left: 50px;
+            /* margin-left: 50px; */
         }
 
         .zoom-btn {
@@ -885,6 +885,7 @@
         }
 
         .book-title {
+            margin-left: 50px;
             font-size: .8rem;
             font-weight: normal;
             color: var(--secondary-color);
@@ -893,6 +894,7 @@
         .book-actions {
             display: flex;
             align-items: center;
+            
             gap: 10px;
         }
 
@@ -6698,7 +6700,9 @@
                     </button>
                     
                     
-                    
+                    <div class="book-reader-header">
+                        <div class="book-title" id="currentBookTitle">පොත් තෝරාගෙන ඇත</div>
+                    </div>
                     <div class="controls-container" id="controlsContainer">
                         <div class="zoom-controls">
                             <button class="zoom-btn" type="button" onclick="zoomOut()" 
@@ -6760,9 +6764,7 @@
                         </button>
                          
                     </div>
-                    <div class="book-reader-header">
-                        <div class="book-title" id="currentBookTitle">පොත් තෝරාගෙන ඇත</div>
-                    </div>
+                    
                 </div>
                 <!-- Iframe with Theme Wrapper -->
                 <div class="iframe-wrapper">
