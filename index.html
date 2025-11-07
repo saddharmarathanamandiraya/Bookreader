@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="https://i.postimg.cc/sX3pFh2v/logo.png" type="image/x-icon"/>
     <style>
-        /*____ This webpage was created by Saddharmarathana Mandiraya.
-          ____ All rights reserved */
+        /* #BOOKREADER-2024-SRI-SADDharMARATHANA-007 */
         :root {
             --primary-color: #2c3e50;
             --secondary-color: #3498db;
@@ -382,7 +381,7 @@
             margin-bottom: var(--footer-height);
         }
 
-        /* Toggle Button - UPDATED POSITION */
+        /* Toggle Button */
         .toggle-btn {
             position: fixed;
             top: 90px;
@@ -408,7 +407,7 @@
             left: 20px;
         }
 
-        /* Sidebar Styles - ALWAYS VISIBLE */
+        /* Sidebar Styles */
         .sidebar {
             width: var(--sidebar-width);
             height: calc(100vh - var(--header-height) - var(--footer-height));
@@ -644,7 +643,7 @@
             transform: scale(1.05);
         }
 
-        /* Bookmarks Section - UPDATED */
+        /* Bookmarks Section */
         .bookmarks-section {
             margin-top: 15px;
             border-top: 2px solid var(--border-color);
@@ -669,7 +668,7 @@
             font-size: 0.8rem;
         }
 
-        /* NEW: Bookmarks Toggle Button */
+        /* Bookmarks Toggle Button */
         .bookmarks-toggle-btn {
             background: var(--secondary-color);
             color: white;
@@ -701,7 +700,7 @@
             transform: rotate(-90deg);
         }
 
-        /* NEW: Bookmarks Grid Layout */
+        /* Bookmarks Grid Layout */
         .bookmarks-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
@@ -781,7 +780,7 @@
             transform: scale(1.1);
         }
 
-        /* Main Content - UPDATED FOR SIDEBAR */
+        /* Main Content */
         .main-content {
             flex: 1;
             padding: 20px;
@@ -800,8 +799,7 @@
             border: none;
             border-radius: 12px;
             box-shadow: var(--shadow);
-            /* background: white; */
-             background: var(--sidebar-bg);
+            background: var(--sidebar-bg);
             overflow: hidden;
             position: relative;
         }
@@ -815,7 +813,6 @@
             padding: 8px 12px;
             border-radius: 25px;
             border: 1px solid var(--border-color);
-            /* margin-left: 50px; */
         }
 
         .zoom-btn {
@@ -894,7 +891,6 @@
         .book-actions {
             display: flex;
             align-items: center;
-            
             gap: 10px;
         }
 
@@ -1062,15 +1058,16 @@
             text-align: center;
         }
 
-        /* Iframe Wrapper for Zoom and Themes */
+        /* Iframe Wrapper for Zoom and Themes - FIXED SCROLLING */
         .iframe-wrapper {
             width: 100%;
-            height: 100%;
+            height: calc(100% - 60px);
             position: relative;
             border-radius: 12px;
-            overflow: hidden;
+            overflow: auto;
             transform-origin: center center;
             transition: transform 0.3s ease;
+            z-index: 1;
         }
 
         .book-reader-iframe {
@@ -1079,6 +1076,9 @@
             border: none;
             border-radius: 12px;
             transition: filter 0.3s ease;
+            overflow: auto;
+            z-index: 1;
+            position: relative;
         }
 
         .iframe-overlay {
@@ -1088,7 +1088,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 10;
+            z-index: 2;
             border-radius: 12px;
             transition: all 0.3s ease;
             mix-blend-mode: multiply;
@@ -1120,45 +1120,6 @@
         @keyframes rotate {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
-        }
-
-        /* __________________subscribe start__________________ */
-        /* Header Styles */
-        .main-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: relative;
-            height: 70px;
-        }
-
-        .header-left {
-            flex: 1;
-            display: flex;
-            justify-content: flex-start;
-        }
-
-        .header-middle {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .header-right {
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
         }
 
         /* Subscribe Button Styles */
@@ -1256,7 +1217,6 @@
             content: "Subscribed!";
             font-size: 12px;
         }
-        /* subscribe end */
 
         .lavender-book-icon {
             display: inline-block;
@@ -1383,7 +1343,40 @@
             }
         }
 
-        /* Mobile Responsive */
+        /* Mobile Controls */
+        .mobile-controls-toggle {
+            display: none;
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-bottom: 10px;
+            width: 60%;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: var(--transition);
+            position: relative;
+            z-index: 100;
+        }
+
+        .mobile-controls-toggle:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .controls-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            align-items: center;
+        }
+
+        /* Mobile Styles */
         @media (max-width: 768px) {
             .header {
                 padding: 0 15px;
@@ -1450,7 +1443,6 @@
             .zoom-controls {
                 order: -1;
                 margin-bottom: 10px;
-                
             }
 
             /* Mobile bookmarks grid */
@@ -1487,29 +1479,90 @@
                 border-radius: 50%;
             }
 
-            /* Mobile settings */
-            .settings-content {
-                width: 95%;
-                margin: 10% auto;
+            /* Mobile controls */
+            .mobile-controls-toggle {
+                display: flex;
+                position: relative;
+                z-index: 100;
+            }
+            
+            .controls-container {
+                display: none;
+                flex-direction: column;
+                width: 60%;
+                gap: 1px;
+                padding: 1px;
+                background: var(--sidebar-bg);
+                border-radius: 12px;
+                border: 1px solid var(--border-color);
+                margin-top: 1px;
+                box-shadow: var(--shadow);
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 1000;
+                max-height: 70vh;
+                overflow-y: auto;
+            }
+            
+            .controls-container.active {
+                display: flex;
+                animation: slideDown 0.3s ease;
+            }
+            
+            .book-actions {
+                flex-direction: column;
+                gap: 10px;
+                position: relative;
+            }
+            
+            .book-reader-header {
+                flex-direction: column;
+                gap: 10px;
+                position: relative;
+                z-index: 10;
+            }
+            
+            .book-title {
+                order: -1;
+                text-align: center;
+                width: 100%;
+            }
+            
+            .zoom-controls,
+            .dark-layer-controls,
+            .brown-theme-controls {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .book-action-btn {
+                width: 100%;
+                justify-content: center;
             }
 
-            .theme-options {
-                flex-direction: column;
+            /* Ensure iframe stays in place */
+            .book-reader-container {
+                position: relative;
+                z-index: 1;
             }
 
-            .font-options {
-                flex-direction: column;
+            .iframe-wrapper {
+                position: relative;
+                z-index: 1;
+                height: calc(100% - 120px);
             }
         }
 
-        /* Desktop specific styles */
-        @media (min-width: 769px) {
-            .sidebar {
-                transform: translateX(0);
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -10px);
             }
-            
-            .sidebar.hidden {
-                transform: translateX(-100%);
+            to {
+                opacity: 1;
+                transform: translate(-50%, 0);
             }
         }
 
@@ -1538,154 +1591,43 @@
                 padding: 4px 8px;
             }
         }
-       
-         /* _______mobil___________toggle */
-      /* Mobile Controls */
-.mobile-controls-toggle {
-    display: none;
-    background: var(--secondary-color);
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: 600;
-    margin-bottom: 10px;
-    width: 60%;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    transition: var(--transition);
-    position: relative;
-    z-index: 100;
-}
 
-.mobile-controls-toggle:hover {
-    background: var(--accent-color);
-    transform: translateY(-2px);
-}
+        /* Desktop specific styles */
+        @media (min-width: 769px) {
+            .sidebar {
+                transform: translateX(0);
+            }
+            
+            .sidebar.hidden {
+                transform: translateX(-100%);
+            }
+        }
 
-.controls-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    align-items: center;
-}
+        /* Refresh button specific styles */
+        .book-action-btn.refresh-btn {
+            background: var(--secondary-color);
+        }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-    .mobile-controls-toggle {
-        display: flex;
-        position: relative;
-        z-index: 100;
-    }
-    
-    .controls-container {
-        display: none;
-        flex-direction: column;
-        width: 60%;
-        gap: 1px;
-        padding: 1px;
-        background: var(--sidebar-bg);
-        border-radius: 12px;
-        border: 1px solid var(--border-color);
-        margin-top: 1px;
-        box-shadow: var(--shadow);
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1000;
-        max-height: 70vh;
-        overflow-y: auto;
-    }
-    
-    .controls-container.active {
-        display: flex;
-        animation: slideDown 0.3s ease;
-    }
-    
-    .book-actions {
-        flex-direction: column;
-        gap: 10px;
-        position: relative;
-    }
-    
-    .book-reader-header {
-        flex-direction: column;
-        gap: 10px;
-        position: relative;
-        z-index: 10;
-    }
-    
-    .book-title {
-        order: -1;
-        text-align: center;
-        width: 100%;
-    }
-    
-    .zoom-controls,
-    .dark-layer-controls,
-    .brown-theme-controls {
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .book-action-btn {
-        width: 100%;
-        justify-content: center;
-    }
+        .book-action-btn.refresh-btn:hover {
+            background: #2980b9;
+        }
 
-    /* Ensure iframe stays in place */
-    .book-reader-container {
-        position: relative;
-        z-index: 1;
-    }
+        .book-action-btn.refresh-btn:active {
+            transform: rotate(360deg);
+            transition: transform 0.5s ease;
+        }
 
-    .iframe-wrapper {
-        position: relative;
-        z-index: 1;
-    }
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translate(-50%, -10px);
-    }
-    to {
-        opacity: 1;
-        transform: translate(-50%, 0);
-    }
-}
-        /* _______reset button */
-/* Refresh button specific styles if needed */
-.book-action-btn.refresh-btn {
-    background: var(--secondary-color);
-}
-
-.book-action-btn.refresh-btn:hover {
-    background: #2980b9;
-}
-
-.book-action-btn.refresh-btn:active {
-    transform: rotate(360deg);
-    transition: transform 0.5s ease;
-}
-        /* ___refres for mobile_____ */
         /* Small button for mobile */
-.book-action-btn.small-btn {
-    /* padding: 8px 12px; */
-    font-size: 0.8rem;
-}
+        .book-action-btn.small-btn {
+            font-size: 0.8rem;
+        }
 
-@media (max-width: 768px) {
-    .book-action-btn.small-btn {
-        width: auto;
-        min-width: 60px;
-    }
-}
+        @media (max-width: 768px) {
+            .book-action-btn.small-btn {
+                width: auto;
+                min-width: 60px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1697,7 +1639,7 @@
             </div>
             <div class="logo-text">ශ්‍රී සද්ධර්මරතන මන්දිරය</div>
         </div> 
-         <!--___________subscribe button start____________  -->
+         <!--___________subscribe button____________  -->
         <div class="header-middle">
             <!-- Subscribe Button -->
             <div class="subscribe-container">
@@ -1755,10 +1697,10 @@
 
     <!-- CONTENT WRAPPER -->
     <div class="content-wrapper">
-        <!-- Toggle Button - UPDATED -->
+        <!-- Toggle Button -->
         <div class="toggle-btn" id="toggleBtn" onclick="toggleSidebar()">☰</div>
 
-        <!-- Sidebar - ALWAYS VISIBLE ON DESKTOP -->
+        <!-- Sidebar -->
         <div class="sidebar" id="sidebar">
             <!-- FIXED TOP SECTION -->
             <div class="sidebar-top-section">
@@ -4547,11 +4489,8 @@
            </div>
            <span class="favorite-star" onclick="toggleFavorite(this, '1U4Q9e6elTv5OeazeslmcGTIkXpK--AfI')">⭐</span>
         </a>              
-    </li>
-                      
-                    </ul>
-
-
+    </li>     
+</ul>
                     <!-- පාළි පොත් Subcategory -->
                     <div class="category-header" onclick="toggleCategory(this)">
                         <i class="fa-regular fa-folder red-folder"></i> පාළි පොත්</div>
@@ -5394,6 +5333,711 @@
                             </a>
                         </li>
                     </ul>
+                     <!-- රේරුකාණේ මානාහිමි -->
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <i class="fa-regular fa-folder Violet-folder"></i> විශේෂ චරිත
+                </div>
+                <ul class="books-list">
+    <li> 
+        <a href="#" class="book-link" data-id="1L0ib4eYcU3k8wG2DLTm_ElgOT1tchMrW" 
+           data-url="https://drive.google.com/file/d/1L0ib4eYcU3k8wG2DLTm_ElgOT1tchMrW/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">අතිපූජනීය ජර්මන්ජාතික ඤාණවිමල මහනාහිමි සටහන්</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1L0ib4eYcU3k8wG2DLTm_ElgOT1tchMrW')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1qbkpW3uG6yfUq9YxAIKqeX6SRY_HDjt3" 
+           data-url="https://drive.google.com/file/d/1qbkpW3uG6yfUq9YxAIKqeX6SRY_HDjt3/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">ආචාර්ය මන් භූරිදත්ත මහාථේර</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1qbkpW3uG6yfUq9YxAIKqeX6SRY_HDjt3')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1z5OSB4fpSi0kcuSlJRVvn25qKhUmcDLz" 
+           data-url="https://drive.google.com/file/d/1z5OSB4fpSi0kcuSlJRVvn25qKhUmcDLz/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">ඔවදන් මුතුහර</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1z5OSB4fpSi0kcuSlJRVvn25qKhUmcDLz')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1ruhtdD3hTlXccb_dntyR8BXXGkH7jtyO" 
+           data-url="https://drive.google.com/file/d/1ruhtdD3hTlXccb_dntyR8BXXGkH7jtyO/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">ඡට්ඨමහා සංගායනාව බුරුමයෙ - බළංගොඩ ආනන්ද මෛත්‍රීය නාහිමි</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1ruhtdD3hTlXccb_dntyR8BXXGkH7jtyO')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1XhESbwsnXW2P3LXcVck9wML4uUFavIY4" 
+           data-url="https://drive.google.com/file/d/1XhESbwsnXW2P3LXcVck9wML4uUFavIY4/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">පූජ්‍ය කොවිද හිමිගේ  චරිතය</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1XhESbwsnXW2P3LXcVck9wML4uUFavIY4')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1PN6NXz4kAGPfRUICmKVALajxWeyP-feG" 
+           data-url="https://drive.google.com/file/d/1PN6NXz4kAGPfRUICmKVALajxWeyP-feG/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">මන් භූරිදත්ත මහාථේර</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1PN6NXz4kAGPfRUICmKVALajxWeyP-feG')">⭐</span>
+        </a>              
+    </li>
+     <li> 
+        <a href="#" class="book-link" data-id="1qW1VBSYME3DXcFONhTkTM3KicjceskUa" 
+           data-url="https://drive.google.com/file/d/1qW1VBSYME3DXcFONhTkTM3KicjceskUa/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">සිල්මාතා කායිව්</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1qW1VBSYME3DXcFONhTkTM3KicjceskUa')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1_VgxOBwG9bYXqQLSqe0QKVISh6zfZiWz" 
+           data-url="https://drive.google.com/file/d/1_VgxOBwG9bYXqQLSqe0QKVISh6zfZiWz/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">යතිවර සිතිවිලි</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1_VgxOBwG9bYXqQLSqe0QKVISh6zfZiWz')">⭐</span>
+        </a>              
+    </li>
+</ul>
+
+ <!-- පැරණි සිංහල පොත් -->
+                    <div class="category-header" onclick="toggleCategory(this)">
+                        <i class="fa-regular fa-folder blue-folder"></i> පැරණි සිංහල පොත්
+                    </div>
+                    <ul class="books-list">
+    <li> 
+        <a href="#" class="book-link" data-id="1Kf2cWALCAj9JnNvNGY4Jq3aW769LPgl-" 
+           data-url="https://drive.google.com/file/d/1Kf2cWALCAj9JnNvNGY4Jq3aW769LPgl-/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">සහස්ස වත්ථුප්පකරණය</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1Kf2cWALCAj9JnNvNGY4Jq3aW769LPgl-')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1HiIwPRywOYU4fqKt31dsyJP1mMY7hKbB" 
+           data-url="https://drive.google.com/file/d/1HiIwPRywOYU4fqKt31dsyJP1mMY7hKbB/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">සිහල වත්ථුප්පකරණය</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1HiIwPRywOYU4fqKt31dsyJP1mMY7hKbB')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1l2TP2Kh_9vrTERpjVAOPR4fOyq6KVQx2" 
+           data-url="https://drive.google.com/file/d/1l2TP2Kh_9vrTERpjVAOPR4fOyq6KVQx2/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">පූජාවළිය-(කිරිඇල්ලේ ඥානවිමල නාහිමි සංස්කරණ)</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1l2TP2Kh_9vrTERpjVAOPR4fOyq6KVQx2')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="10kQ4phSIfRrYqhJE43xJLv1Wlq61VSc2" 
+           data-url="https://drive.google.com/file/d/10kQ4phSIfRrYqhJE43xJLv1Wlq61VSc2/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">බුත්සරණ</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '10kQ4phSIfRrYqhJE43xJLv1Wlq61VSc2')">⭐</span>
+        </a>              
+    </li>
+     <li> 
+        <a href="#" class="book-link" data-id="1JaIUlyVuLIR_2RJiXVdzGfN51hVHs1OI" 
+           data-url="https://drive.google.com/file/d/1JaIUlyVuLIR_2RJiXVdzGfN51hVHs1OI/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">වදන් කවිපොත-(කීර්‍ත ශ්‍රී රාජසිංහ සමය)</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1JaIUlyVuLIR_2RJiXVdzGfN51hVHs1OI')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1nYBAaKkNd-8WvhRY1t4_KeUT0J0qBXxs" 
+           data-url="https://drive.google.com/file/d/1nYBAaKkNd-8WvhRY1t4_KeUT0J0qBXxs/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">සදධම්මාලංකාරය</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1nYBAaKkNd-8WvhRY1t4_KeUT0J0qBXxs')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1oDDejn3BdSCLSVW-6TcWhCaKCS9wUbsj" 
+           data-url="https://drive.google.com/file/d/1oDDejn3BdSCLSVW-6TcWhCaKCS9wUbsj/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">සැලළිහිණි සංදේශය</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1oDDejn3BdSCLSVW-6TcWhCaKCS9wUbsj')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1mcawKhu6JHvvq88I9OZs2aYaTJP47hIZ" 
+           data-url="https://drive.google.com/file/d/1mcawKhu6JHvvq88I9OZs2aYaTJP47hIZ/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">සිංහල දීපවංශය</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1mcawKhu6JHvvq88I9OZs2aYaTJP47hIZ')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1ySvemipL6aRPDtIJneVie2nl9NtTypUj" 
+           data-url="https://drive.google.com/file/d/1ySvemipL6aRPDtIJneVie2nl9NtTypUj/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">සිංහල මහාවංසය </span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1ySvemipL6aRPDtIJneVie2nl9NtTypUj')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1V1NXhHg6wreVf5GYgh80o0Am6y89dUMj" 
+           data-url="https://drive.google.com/file/d/1V1NXhHg6wreVf5GYgh80o0Am6y89dUMj/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">සිංහල මිළින්දප්‍රශ්ණය</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1V1NXhHg6wreVf5GYgh80o0Am6y89dUMj')">⭐</span>
+        </a>              
+    </li>
+     <li> 
+        <a href="#" class="book-link" data-id="1AeikyV6sxaVtKbZXtxVks1xsYrdl2W-w" 
+           data-url="https://drive.google.com/file/d/1AeikyV6sxaVtKbZXtxVks1xsYrdl2W-w/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">සිරිත්මල්දම</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1AeikyV6sxaVtKbZXtxVks1xsYrdl2W-w')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1_oIgdVl12WxWrEekD5c7hCxRlZ5bcYFy" 
+           data-url="https://drive.google.com/file/d/1_oIgdVl12WxWrEekD5c7hCxRlZ5bcYFy/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">ජිනකාලමාලී ප්‍රකරණය-සිංහල අනුවාදය</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1_oIgdVl12WxWrEekD5c7hCxRlZ5bcYFy')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1jvU7ZktuCS3QXAx9YkjVBAfL_qxm4jPI" 
+           data-url="https://drive.google.com/file/d/1jvU7ZktuCS3QXAx9YkjVBAfL_qxm4jPI/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">ජිනකාලමාලී ප්‍රකරණය-රත්නපඤ්ඤ හිමි</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1jvU7ZktuCS3QXAx9YkjVBAfL_qxm4jPI')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1aSj_SVrcIfZAfbCPZA-gXNWUFF2FipXY" 
+           data-url="https://drive.google.com/file/d/1aSj_SVrcIfZAfbCPZA-gXNWUFF2FipXY/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">දම්පියා සන්නය</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1aSj_SVrcIfZAfbCPZA-gXNWUFF2FipXY')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="10Q5biQ_h3LoNA1V5ULLP9iBzSIACNq_C" 
+           data-url="https://drive.google.com/file/d/10Q5biQ_h3LoNA1V5ULLP9iBzSIACNq_C/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">ලෝවැඩ සඟරාව-විදාගම මෛත්‍රිය හිමි</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '10Q5biQ_h3LoNA1V5ULLP9iBzSIACNq_C')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1sqJCp-L_vbL7bcZo4NXAEYhADynFS8ea" 
+           data-url="https://drive.google.com/file/d/1sqJCp-L_vbL7bcZo4NXAEYhADynFS8ea/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">අමාවතුර-ගුරුළුගෝමී</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1sqJCp-L_vbL7bcZo4NXAEYhADynFS8ea')">⭐</span>
+        </a>              
+    </li>
+     <li> 
+        <a href="#" class="book-link" data-id="1ccJ5agsGw-AtfzORKZ8EiOI7zdwyn2BQ" 
+           data-url="https://drive.google.com/file/d/1ccJ5agsGw-AtfzORKZ8EiOI7zdwyn2BQ/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">අනාගත වංශය මෙතේ බුදුසිරිත-විල්ගම්මුල සංඝරාජ හිමි</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1ccJ5agsGw-AtfzORKZ8EiOI7zdwyn2BQ')">⭐</span>
+        </a>              
+    </li>
+                    </ul>
+                     <!-- ශබ්දකෝෂ වර්‍ග -->
+                    <div class="category-header" onclick="toggleCategory(this)">
+                        <i class="fa-regular fa-folder blue-folder"></i> ශබ්දකෝෂ වර්‍ග
+                    </div>
+                    <ul class="books-list">
+                         <!-- පාළි-ඉංග්‍රීසි Subcategory -->
+                        <div class="category-header" onclick="toggleCategory(this)">
+                            <i class="fa-regular fa-folder blue-folder"></i>පාළි ඉංග්‍රීසි ශබ්දකෝෂ
+                        </div>
+                        <ul class="books-list">
+                            <li> 
+        <a href="#" class="book-link" data-id="1ipK97hQ5Yi7CvSVo1OeD8PFpAGY9ZOWB" 
+           data-url="https://drive.google.com/file/d/1ipK97hQ5Yi7CvSVo1OeD8PFpAGY9ZOWB/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">A Dictionary Of Pali</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1ipK97hQ5Yi7CvSVo1OeD8PFpAGY9ZOWB')">⭐</span>
+        </a>              
+    </li>
+                             <li> 
+        <a href="#" class="book-link" data-id="1tSYs9q1u6-Y-ikiezUNxqY6SNwhxgNmY" 
+           data-url="https://drive.google.com/file/d/1tSYs9q1u6-Y-ikiezUNxqY6SNwhxgNmY/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">ඉංග්‍රීසි පාලි ශබ්ද</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1tSYs9q1u6-Y-ikiezUNxqY6SNwhxgNmY')">⭐</span>
+        </a>              
+    </li>
+     <li> 
+        <a href="#" class="book-link" data-id="11GTllF3vyp-pcfDk7H4HJ2AEJkCzr63j" 
+           data-url="https://drive.google.com/file/d/11GTllF3vyp-pcfDk7H4HJ2AEJkCzr63j/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">ශාස්ත්‍රීය පාලි ඉංග්‍රීසි ශබ්ද කෝෂය-01</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '11GTllF3vyp-pcfDk7H4HJ2AEJkCzr63j')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="13cuaImncEP0Y2z3SyHznjRPfVmlA98qb" 
+           data-url="https://drive.google.com/file/d/13cuaImncEP0Y2z3SyHznjRPfVmlA98qb/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">ශාස්ත්‍රීය පාලි ඉංග්‍රීසි ශබ්ද කෝෂය-02</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '13cuaImncEP0Y2z3SyHznjRPfVmlA98qb')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="19W2AAePVKZCqfprWpWQFSNCT0z-t2Hlx" 
+           data-url="https://drive.google.com/file/d/19W2AAePVKZCqfprWpWQFSNCT0z-t2Hlx/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">ශාස්ත්‍රීය පාලි ඉංග්‍රීසි ශබ්ද කෝෂය-03</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '19W2AAePVKZCqfprWpWQFSNCT0z-t2Hlx')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1iTX_8q_DbbWEpyV3hzPgf5UMiJtJTY3S" 
+           data-url="https://drive.google.com/file/d/1iTX_8q_DbbWEpyV3hzPgf5UMiJtJTY3S/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">කෝෂග්‍රන්ථ 1-1</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1iTX_8q_DbbWEpyV3hzPgf5UMiJtJTY3S')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1PreWr1cWnfff7fK0TuaIAh6F-pwABqpg" 
+           data-url="https://drive.google.com/file/d/1PreWr1cWnfff7fK0TuaIAh6F-pwABqpg/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">කෝෂග්‍රන්ථ 1-2</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1PreWr1cWnfff7fK0TuaIAh6F-pwABqpg')">⭐</span>
+        </a>              
+    </li>
+     <li> 
+        <a href="#" class="book-link" data-id="1k7czqkScs8UIC6Id_PN1Y4cSJNJb3czw" 
+           data-url="https://drive.google.com/file/d/1k7czqkScs8UIC6Id_PN1Y4cSJNJb3czw/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">කෝෂග්‍රන්ථ 2-1</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1k7czqkScs8UIC6Id_PN1Y4cSJNJb3czw')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1gS26IN1zFYXMF9IQaecp433tFOirJaRc" 
+           data-url="https://drive.google.com/file/d/1gS26IN1zFYXMF9IQaecp433tFOirJaRc/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">කෝෂග්‍රන්ථ 2-2</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1gS26IN1zFYXMF9IQaecp433tFOirJaRc')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1WREtwS9CvhIe8mxxb4i9oyy2E60UGJr6" 
+           data-url="https://drive.google.com/file/d/1WREtwS9CvhIe8mxxb4i9oyy2E60UGJr6/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">රීස් ඩේවිස්  ශබ්ද කෝෂය-01</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1WREtwS9CvhIe8mxxb4i9oyy2E60UGJr6')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1E0m3XhjnrSwZGFe5twKJBU7Q_l6jsUUH" 
+           data-url="https://drive.google.com/file/d/1E0m3XhjnrSwZGFe5twKJBU7Q_l6jsUUH/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">රීස් ඩේවිස් ශබ්ද කෝෂය-02</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1E0m3XhjnrSwZGFe5twKJBU7Q_l6jsUUH')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="13ibH0Da5ZzRJtXo0-xGF0t-HXHu5nKYD" 
+           data-url="https://drive.google.com/file/d/13ibH0Da5ZzRJtXo0-xGF0t-HXHu5nKYD/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">දම්පියා</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '13ibH0Da5ZzRJtXo0-xGF0t-HXHu5nKYD')">⭐</span>
+        </a>              
+    </li>
+      <li> 
+        <a href="#" class="book-link" data-id="1fV8NTKA4u240lUNDY_uLnA0Pm5GTAgFC" 
+           data-url="https://drive.google.com/file/d/1fV8NTKA4u240lUNDY_uLnA0Pm5GTAgFC/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">පාලි ඉංග්‍රීසි අකාරාදිය</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1fV8NTKA4u240lUNDY_uLnA0Pm5GTAgFC')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1o94UVQzoRm0wJlTJC9tZYMuMOA_cpgtu" 
+           data-url="https://drive.google.com/file/d/1o94UVQzoRm0wJlTJC9tZYMuMOA_cpgtu/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">පාලි ඉංග්‍රීසි විශ්වවිද්‍යාල ශබ්ද කෝෂය </span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1o94UVQzoRm0wJlTJC9tZYMuMOA_cpgtu')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1YXdr23zSKZSbLD7AmxlvYQMb2zh91huL" 
+           data-url="https://drive.google.com/file/d/1YXdr23zSKZSbLD7AmxlvYQMb2zh91huL/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">පාලි ඉංග්‍රීසි ශබ්ද </span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1YXdr23zSKZSbLD7AmxlvYQMb2zh91huL')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1GrK75NsYfPzWt1pc-nqgBiQrIafqpPkN" 
+           data-url="https://drive.google.com/file/d/1GrK75NsYfPzWt1pc-nqgBiQrIafqpPkN/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">පාලි ඉංග්‍රීසි ශබ්දකෝෂය</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1GrK75NsYfPzWt1pc-nqgBiQrIafqpPkN')">⭐</span>
+        </a>              
+    </li>
+   
+     <li> 
+        <a href="#" class="book-link" data-id="1iTX_8q_DbbWEpyV3hzPgf5UMiJtJTY3S" 
+           data-url="https://drive.google.com/file/d/1iTX_8q_DbbWEpyV3hzPgf5UMiJtJTY3S/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">ENCYCLOPAEDIA OF BUDDHISM
+
+Volume I-I</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1iTX_8q_DbbWEpyV3hzPgf5UMiJtJTY3S')">⭐</span>
+        </a>              
+    </li>
+      <li> 
+        <a href="#" class="book-link" data-id="1PreWr1cWnfff7fK0TuaIAh6F-pwABqpg" 
+           data-url="https://drive.google.com/file/d/1PreWr1cWnfff7fK0TuaIAh6F-pwABqpg/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">ENCYCLOPAEDIA OF BUDDHISM
+
+Volume I-II</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1PreWr1cWnfff7fK0TuaIAh6F-pwABqpg')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1k7czqkScs8UIC6Id_PN1Y4cSJNJb3czw" 
+           data-url="https://drive.google.com/file/d/1k7czqkScs8UIC6Id_PN1Y4cSJNJb3czw/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">ENCYCLOPAEDIA OF BUDDHISM
+
+Volume II-I</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1k7czqkScs8UIC6Id_PN1Y4cSJNJb3czw')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1gS26IN1zFYXMF9IQaecp433tFOirJaRc" 
+           data-url="https://drive.google.com/file/d/1gS26IN1zFYXMF9IQaecp433tFOirJaRc/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">ENCYCLOPAEDIA OF BUDDHISM
+
+Volume II-II</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1gS26IN1zFYXMF9IQaecp433tFOirJaRc')">⭐</span>
+        </a>              
+    </li>
+</ul>
+<!-- පාළි සිංහල ශබ්දකෝෂය Subcategory -->
+                        <div class="category-header" onclick="toggleCategory(this)">
+                            <i class="fa-regular fa-folder blue-folder"></i>බුරුම පාළි සිංහල වචන
+                        </div>
+                        <ul class="books-list">
+ <li> 
+        <a href="#" class="book-link" data-id="1TZtREe5JffbBl2K9nZstm-So6P-b6LeP" 
+           data-url="https://drive.google.com/file/d/1TZtREe5JffbBl2K9nZstm-So6P-b6LeP/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">බුරුම පාලි ඉංග්‍රීසි වචන</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1TZtREe5JffbBl2K9nZstm-So6P-b6LeP')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1jUPxoCwJWljEpNgRJHIFgdR0qx23MK_m" 
+           data-url="https://drive.google.com/file/d/1jUPxoCwJWljEpNgRJHIFgdR0qx23MK_m/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">The Pali Alphabet</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1jUPxoCwJWljEpNgRJHIFgdR0qx23MK_m')">⭐</span>
+        </a>              
+    </li>
+</ul>
+                         <!-- පාළි සිංහල ශබ්දකෝෂය Subcategory -->
+                        <div class="category-header" onclick="toggleCategory(this)">
+                            <i class="fa-regular fa-folder blue-folder"></i>පාළි සිංහල ශබ්දකෝෂ
+                        </div>
+                        <ul class="books-list">
+                       
+    <li> 
+        <a href="#" class="book-link" data-id="1R3LkG9hIUmXK9TtcNk2o0DiHwyIgwQwv" 
+           data-url="https://drive.google.com/file/d/1R3LkG9hIUmXK9TtcNk2o0DiHwyIgwQwv/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">අටුවා සූචිය-01</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1R3LkG9hIUmXK9TtcNk2o0DiHwyIgwQwv')">⭐</span>
+        </a>              
+    </li>
+     <li> 
+        <a href="#" class="book-link" data-id="15b2ITaxiuumyVJmMHMABoxPeXrhqK9tO" 
+           data-url="https://drive.google.com/file/d/15b2ITaxiuumyVJmMHMABoxPeXrhqK9tO/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">අටුවා සූචිය-02</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '15b2ITaxiuumyVJmMHMABoxPeXrhqK9tO')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1dgoYbxSf0p-KFe4QAy28E6gROzVknj7_" 
+           data-url="https://drive.google.com/file/d/1dgoYbxSf0p-KFe4QAy28E6gROzVknj7_/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">එකකුරුකෝෂය-01</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1dgoYbxSf0p-KFe4QAy28E6gROzVknj7_')">⭐</span>
+        </a>              
+    </li>
+      <li> 
+        <a href="#" class="book-link" data-id="1sWEH-HSdN4QwClGV4dTl9lO1FhE2B7lr" 
+           data-url="https://drive.google.com/file/d/1sWEH-HSdN4QwClGV4dTl9lO1FhE2B7lr/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">එකකුරුකෝෂය-02</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1sWEH-HSdN4QwClGV4dTl9lO1FhE2B7lr')">⭐</span>
+        </a>              
+    </li>
+      <li> 
+        <a href="#" class="book-link" data-id="1Xmp_zpPg1uFMzz4dzvFnPNDNI7SPp_oK" 
+           data-url="https://drive.google.com/file/d/1Xmp_zpPg1uFMzz4dzvFnPNDNI7SPp_oK/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">ගැටලු පද</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1Xmp_zpPg1uFMzz4dzvFnPNDNI7SPp_oK')">⭐</span>
+        </a>              
+    </li>
+      <li> 
+        <a href="#" class="book-link" data-id="1YQTOMu5Zuld1BzKFuhY2ZK5-lJFZhTmP" 
+           data-url="https://drive.google.com/file/d/1YQTOMu5Zuld1BzKFuhY2ZK5-lJFZhTmP/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">ජිනවචනකෝෂය-01</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1YQTOMu5Zuld1BzKFuhY2ZK5-lJFZhTmP')">⭐</span>
+        </a>              
+    </li>
+      <li> 
+        <a href="#" class="book-link" data-id="1O4B4nX6nKPmmGNfMEQU8bxUhnwRx-ymq" 
+           data-url="https://drive.google.com/file/d/1O4B4nX6nKPmmGNfMEQU8bxUhnwRx-ymq/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">ජිනවචනකෝෂය-02</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1O4B4nX6nKPmmGNfMEQU8bxUhnwRx-ymq')">⭐</span>
+        </a>              
+    </li>
+      <li> 
+        <a href="#" class="book-link" data-id="103SG9COunCF-bkkS76J2nxpVwCWGWZao" 
+           data-url="https://drive.google.com/file/d/103SG9COunCF-bkkS76J2nxpVwCWGWZao/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">වෙද ශබ්දකෝෂය</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '103SG9COunCF-bkkS76J2nxpVwCWGWZao')">⭐</span>
+        </a>              
+    </li>
+      <li> 
+        <a href="#" class="book-link" data-id="1KJuXfEjtJoUcjOzVNQ4oUkQFONipudsD" 
+           data-url="https://drive.google.com/file/d/1KJuXfEjtJoUcjOzVNQ4oUkQFONipudsD/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">සුධීරමුඛමන්ඩනය</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1KJuXfEjtJoUcjOzVNQ4oUkQFONipudsD')">⭐</span>
+        </a>              
+    </li></ul>
+     <!-- සිංහල ඉංග්‍රීසි ශබ්දකෝෂ Subcategory -->
+                        <div class="category-header" onclick="toggleCategory(this)">
+                            <i class="fa-regular fa-folder blue-folder"></i>සිංහල ඉංග්‍රීසි ශබ්දකෝෂ
+                        </div>
+                        <ul class="books-list">
+    <li> 
+        <a href="#" class="book-link" data-id="1zUofSBt3XapyZd3DB61diiBzUdZLyyJZ" 
+           data-url="https://drive.google.com/file/d/1zUofSBt3XapyZd3DB61diiBzUdZLyyJZ/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">සිංහල ඉංග්‍රීසි ශබ්දකෝෂය-1</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1zUofSBt3XapyZd3DB61diiBzUdZLyyJZ')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1W7sS92FutVbl2tqR1ACnEeGjfzaikSIj" 
+           data-url="https://drive.google.com/file/d/1W7sS92FutVbl2tqR1ACnEeGjfzaikSIj/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">සිංහල ඉංග්‍රීසි ශබ්දකෝෂය-2</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1W7sS92FutVbl2tqR1ACnEeGjfzaikSIj')">⭐</span>
+        </a>              
+    </li>
+    <li> 
+        <a href="#" class="book-link" data-id="1JL2eDcUv2uxHAkDdxYdMW_ERXuJsjUex" 
+           data-url="https://drive.google.com/file/d/1JL2eDcUv2uxHAkDdxYdMW_ERXuJsjUex/preview" 
+           onclick="openBook(this)">
+           <div class="folder-item">
+               <span class="folder-icon">📙</span>
+               <span class="folder-title">සිංහල ඉංග්‍රීසි ශබ්දකෝෂය-3</span>
+           </div>
+           <span class="favorite-star" onclick="toggleFavorite(this, '1JL2eDcUv2uxHAkDdxYdMW_ERXuJsjUex')">⭐</span>
+        </a>              
+    </li>
+                    
+</ul>
+     
+     
+      
+                </ul></ul>
                          <!-- වෙනත් සංගහ පොත් Subcategory -->
                     <div class="category-header" onclick="toggleCategory(this)">
                         <i class="fa-regular fa-folder yellow-folder"></i> වෙනත් සංගහ පොත්</div>
@@ -6780,10 +7424,10 @@
         </div>
     </a>
 </li>
-                        <!-- Add more book categories and items here -->
                     </ul>
                 </div>
-                <!-- Bookmarks Content - UPDATED WITH TOGGLE BUTTON AND GRID -->
+                
+                <!-- Bookmarks Content -->
                 <div id="bookmarksContent" style="display: none;">
                     <div class="bookmarks-section">
                         <div class="bookmarks-header">
@@ -6791,18 +7435,18 @@
                             <span class="bookmarks-count" id="bookmarksListCount">0</span>
                         </div>
                         
-                        <!-- NEW: Bookmarks Toggle Button -->
+                        <!-- Bookmarks Toggle Button -->
                         <button class="bookmarks-toggle-btn" id="bookmarksToggleBtn" onclick="toggleBookmarksView()">
                             <i class="fas fa-th"></i>
                             පොත් කාඩ් පෙන්වන්න
                         </button>
                         
-                        <!-- OLD: Bookmarks List (Hidden by default) -->
+                        <!-- Bookmarks List (Hidden by default) -->
                         <ul id="bookmarksList" class="books-list show" style="display: none;">
                             <!-- Bookmarks will be dynamically added here -->
                         </ul>
                         
-                        <!-- NEW: Bookmarks Grid (Visible by default) -->
+                        <!-- Bookmarks Grid (Visible by default) -->
                         <div id="bookmarksGrid" class="bookmarks-grid">
                             <!-- Bookmark cards will be dynamically added here -->
                         </div>
@@ -6810,6 +7454,7 @@
                 </div>
             </div>
         </div>
+        
         <!-- Main Content -->
         <div class="main-content" id="mainContent">
             <div id="noBookSelected" class="no-book-selected">
@@ -6824,11 +7469,8 @@
                     <button class="mobile-controls-toggle" type="button" id="mobileControlsToggle" 
                             onclick="toggleMobileControls()" aria-label="සැකසුම්" title="සැකසුම්">
                         <i class="fas fa-sliders-h"></i>
-                       
                         <span>සැකසුම්</span>
-                        
                     </button>
-                    
                     
                     <div class="book-reader-header">
                         <div class="book-title" id="currentBookTitle">පොත් තෝරාගෙන ඇත</div>
@@ -6845,13 +7487,12 @@
                                 <i class="fas fa-search-plus"></i>
                             </button>
                         </div>
-                        <!-- ___reset button_______ -->
-             <!--<i class="fas fa-redo"></i>-->
-        <!-- Refresh button - Professional version -->
-<button class="book-action-btn refresh-btn" onclick="refreshBook()" title="Refresh book">
-    <i class="fas fa-sync-alt"></i>
-    <!-- Refresh -->
-</button>         
+                        
+                        <!-- Refresh button -->
+                        <button class="book-action-btn refresh-btn" onclick="refreshBook()" title="Refresh book">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>         
+                        
                         <button class="book-action-btn" type="button" onclick="resetZoom()" 
                                 aria-label="සාමාන්‍ය ප්‍රමාණය" title="සාමාන්‍ය ප්‍රමාණය">
                             <i class="fas fa-expand-arrows-alt"></i>
@@ -6898,21 +7539,22 @@
                                 aria-label="සයිඩ්බාර්" title="සයිඩ්බාර්">
                             <i class="fas fa-bars"></i> සයිඩ්බාර්
                         </button>
-                         
                     </div>
-                    
                 </div>
-                <!-- Iframe with Theme Wrapper -->
+                
+                <!-- Iframe with Theme Wrapper - FIXED SCROLLING -->
                 <div class="iframe-wrapper">
                     <iframe id="bookReader" class="book-reader-iframe" 
                             src="" 
-                            allow="autoplay; fullscreen">
+                            allow="autoplay; fullscreen"
+                            scrolling="yes">
                     </iframe>
                     <div class="iframe-overlay" id="themeOverlay"></div>
                 </div>
             </div>
         </div>
     </div>
+    
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-left">
@@ -6948,14 +7590,8 @@
             <div class="digital-clock" id="digitalClock">00:00:00</div>
         </div>
     </footer>
-    <script>
-        // JavaScript code from your implementation
-        // Download functionality
-        function downloadAsZip() {
-            alert('Book Reader package download started!');
-            // In a real scenario, this would trigger the zip download
-        }
 
+    <script>
         // State Management
         const state = {
             bookmarks: JSON.parse(localStorage.getItem('bookmarks')) || [],
@@ -6965,7 +7601,7 @@
             currentTheme: 'light',
             customBgColor: null,
             currentColorTheme: 'blue',
-            bookmarksView: 'grid' // 'grid' or 'list'
+            bookmarksView: 'grid'
         };
 
         // Zoom state
@@ -6975,7 +7611,7 @@
         const MAX_ZOOM = 200;
 
         // Theme state
-        let currentTheme = 'none'; // 'none', 'dark', 'brown'
+        let currentTheme = 'none';
         let themeIntensity = 0;
 
         // DOM Elements
@@ -7002,6 +7638,8 @@
         const colorPreview = document.getElementById('colorPreview');
         const zoomLevelDisplay = document.getElementById('zoomLevel');
         const themeOverlay = document.getElementById('themeOverlay');
+        const mobileControlsToggle = document.getElementById('mobileControlsToggle');
+        const controlsContainer = document.getElementById('controlsContainer');
 
         // Initialize
         function init() {
@@ -7024,14 +7662,11 @@
             
             // Initialize search functionality
             initSearch();
-        }
-
-        // Initialize search functionality
-        function initSearch() {
-            const clearSearchBtn = document.getElementById('clearSearch');
-            if (clearSearchBtn) {
-                clearSearchBtn.style.display = 'none';
-            }
+            
+            // Initialize mobile controls
+            initMobileControls();
+            
+            console.log('📚 Book Reader initialized successfully!');
         }
 
         // SEARCH FUNCTIONALITY
@@ -7097,6 +7732,99 @@
             items.forEach(item => {
                 item.style.display = "";
             });
+        }
+
+        // INIT SEARCH
+        function initSearch() {
+            const clearSearchBtn = document.getElementById('clearSearch');
+            if (clearSearchBtn) {
+                clearSearchBtn.style.display = 'none';
+            }
+        }
+
+        // MOBILE CONTROLS FUNCTIONS
+        function initMobileControls() {
+            console.log('🔧 Initializing mobile controls...');
+            
+            if (mobileControlsToggle && controlsContainer) {
+                // Set initial state based on screen size
+                handleMobileControlsResize();
+                
+                console.log('✅ Mobile controls initialized successfully');
+            } else {
+                console.log('❌ Mobile controls elements not found');
+            }
+        }
+
+        function handleMobileControlsResize() {
+            if (!mobileControlsToggle || !controlsContainer) return;
+            
+            if (window.innerWidth > 768) {
+                // Desktop - show controls always
+                controlsContainer.style.display = 'flex';
+                controlsContainer.classList.remove('active');
+                mobileControlsToggle.style.display = 'none';
+            } else {
+                // Mobile - show toggle button, hide controls initially
+                controlsContainer.style.display = 'none';
+                controlsContainer.classList.remove('active');
+                mobileControlsToggle.style.display = 'flex';
+                mobileControlsToggle.innerHTML = '<i class="fas fa-sliders-h"></i><span>සැකසුම්</span>';
+            }
+        }
+
+        function toggleMobileControls() {
+            console.log('📱 Toggle mobile controls clicked!');
+            
+            if (!controlsContainer || !mobileControlsToggle) {
+                console.log('❌ Controls container or toggle button not found');
+                return;
+            }
+            
+            if (controlsContainer.classList.contains('active')) {
+                // Hide controls
+                controlsContainer.classList.remove('active');
+                controlsContainer.style.display = 'none';
+                mobileControlsToggle.innerHTML = '<i class="fas fa-sliders-h"></i><span>සැකසුම්</span>';
+                console.log('🔽 Mobile controls hidden');
+            } else {
+                // Show controls
+                controlsContainer.classList.add('active');
+                controlsContainer.style.display = 'flex';
+                mobileControlsToggle.innerHTML = '<i class="fas fa-times"></i><span>වසන්න</span>';
+                console.log('🔼 Mobile controls shown');
+            }
+        }
+
+        // FIX SCROLLING ISSUE IN IFRAME
+        function fixIframeScrolling() {
+            const iframe = document.getElementById('bookReader');
+            if (iframe && state.currentBook) {
+                // Ensure iframe has proper attributes for scrolling
+                iframe.style.overflow = 'auto';
+                iframe.setAttribute('scrolling', 'yes');
+                
+                // Add event listener to handle iframe load
+                iframe.onload = function() {
+                    try {
+                        // Try to access iframe document and ensure scrolling works
+                        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                        if (iframeDoc && iframeDoc.body) {
+                            iframeDoc.body.style.overflow = 'auto';
+                            iframeDoc.body.style.webkitOverflowScrolling = 'touch';
+                            
+                            // Ensure all content is visible
+                            iframeDoc.body.style.minHeight = '100vh';
+                            iframeDoc.documentElement.style.minHeight = '100vh';
+                        }
+                    } catch (error) {
+                        console.log('Cannot access iframe content due to cross-origin restrictions');
+                        // This is normal for cross-origin iframes
+                    }
+                };
+                
+                console.log('🔄 Iframe scrolling fixes applied');
+            }
         }
 
         // TOGGLE BOOKMARKS VIEW FUNCTION
@@ -7222,6 +7950,12 @@
                 noBookSelected.style.display = 'none';
                 bookReaderContainer.style.display = 'block';
                 
+                // Apply scrolling fixes
+                setTimeout(fixIframeScrolling, 1000);
+                
+                // Initialize mobile controls
+                initMobileControls();
+                
                 // Reset zoom and themes
                 resetZoom();
                 currentTheme = 'none';
@@ -7309,11 +8043,18 @@
             if (iframeWrapper) {
                 iframeWrapper.style.transform = `scale(${zoomLevel / 100})`;
                 iframeWrapper.style.transformOrigin = 'center center';
+                
+                // Ensure zoom doesn't break scrolling
+                iframeWrapper.style.overflow = 'auto';
+                iframeWrapper.style.maxHeight = 'none';
             }
             
             if (state.currentBook) {
                 state.currentBook.zoom = zoomLevel;
             }
+            
+            // Re-apply scrolling fix after zoom
+            setTimeout(fixIframeScrolling, 300);
             
             console.log('Zoom level:', zoomLevel + '%');
         }
@@ -7648,7 +8389,7 @@
             }
         }
 
-        // OPEN BOOK FUNCTION
+        // OPEN BOOK FUNCTION - UPDATED WITH SCROLLING FIX
         function openBook(element) {
             const bookId = element.getAttribute('data-id');
             const bookUrl = element.getAttribute('data-url');
@@ -7666,7 +8407,14 @@
             noBookSelected.style.display = 'none';
             bookReaderContainer.style.display = 'block';
             
-            // Reset zoom and themes when opening new book
+            // Apply scrolling fixes
+            setTimeout(fixIframeScrolling, 1000);
+            
+            // Initialize mobile controls when book is opened
+            console.log('📖 Book opened, initializing mobile controls...');
+            initMobileControls();
+            
+            // Reset zoom and themes
             resetZoom();
             currentTheme = 'none';
             themeIntensity = 0;
@@ -7701,6 +8449,51 @@
             if (state.currentBook) {
                 const downloadUrl = state.currentBook.url.replace('/preview', '');
                 window.open(downloadUrl, '_blank');
+            }
+        }
+
+        // REFRESH BOOK FUNCTION
+        function refreshBook() {
+            if (state.currentBook) {
+                console.log('🔄 Refreshing book:', state.currentBook.title);
+                
+                // Show loading state
+                const refreshBtn = document.querySelector('.book-action-btn[onclick="refreshBook()"]');
+                if (refreshBtn) {
+                    const originalHTML = refreshBtn.innerHTML;
+                    refreshBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> අරන් එනවා...';
+                    refreshBtn.disabled = true;
+                    
+                    // Refresh the iframe
+                    const currentSrc = bookReader.src;
+                    bookReader.src = '';
+                    setTimeout(() => {
+                        bookReader.src = currentSrc;
+                        
+                        // Restore button after 1 second
+                        setTimeout(() => {
+                            refreshBtn.innerHTML = originalHTML;
+                            refreshBtn.disabled = false;
+                        }, 1000);
+                        
+                    }, 300);
+                } else {
+                    // Simple refresh without button animation
+                    const currentSrc = bookReader.src;
+                    bookReader.src = '';
+                    setTimeout(() => {
+                        bookReader.src = currentSrc;
+                    }, 300);
+                }
+                
+                // Reset to first page if needed
+                setTimeout(() => {
+                    goToBookHome();
+                }, 500);
+                
+            } else {
+                console.log('❌ No book selected to refresh');
+                alert('රිෆ්‍රෙෂ් කිරීමට පොතක් තෝරාගෙන නැත');
             }
         }
 
@@ -7754,7 +8547,7 @@
             if (bookmarksListCount) bookmarksListCount.textContent = count;
         }
 
-        // RENDER BOOKMARKS - UPDATED FOR BOTH LIST AND GRID
+        // RENDER BOOKMARKS
         function renderBookmarks() {
             const bookmarksList = document.getElementById('bookmarksList');
             const bookmarksGrid = document.getElementById('bookmarksGrid');
@@ -7871,21 +8664,6 @@
             bookmarksBtn.classList.add('active');
             state.currentView = 'bookmarks';
             console.log('🔖 Switched to bookmarks view');
-        }
-
-        // SETTINGS MODAL FUNCTIONS
-        function toggleSettings() {
-            const modal = document.getElementById('settingsModal');
-            if (modal) {
-                modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
-            }
-        }
-
-        function closeSettings() {
-            const modal = document.getElementById('settingsModal');
-            if (modal) {
-                modal.style.display = 'none';
-            }
         }
 
         // SUBSCRIBE FUNCTIONALITY
@@ -8028,6 +8806,7 @@
             // Handle window resize
             window.addEventListener('resize', function() {
                 updateSidebarState();
+                handleMobileControlsResize();
             });
             
             // Simple book selection highlight
@@ -8040,465 +8819,95 @@
                         link.style.color = '';
                         link.style.borderLeft = '';
                     });
-                                // Add highlight to selected book
-            bookLink.style.backgroundColor = 'var(--secondary-color)';
-            bookLink.style.color = 'white';
-            bookLink.style.borderLeft = '4px solid var(--accent-color)';
-        }
-    });
+                    
+                    // Add highlight to selected book
+                    bookLink.style.backgroundColor = 'var(--secondary-color)';
+                    bookLink.style.color = 'white';
+                    bookLink.style.borderLeft = '4px solid var(--accent-color)';
+                }
+            });
 
-    // Keyboard shortcuts
-    document.addEventListener('keydown', function(e) {
-        // Ctrl + F for search (when not in input field)
-        if ((e.ctrlKey || e.metaKey) && e.key === 'f' && e.target.tagName !== 'INPUT') {
-            e.preventDefault();
-            const searchBox = document.getElementById('searchBox');
-            if (searchBox) {
-                searchBox.focus();
-            }
-        }
-        
-        // Escape key to close book
-        if (e.key === 'Escape' && state.currentBook) {
-            closeBook();
-        }
-        
-        // Plus/Minus for zoom
-        if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '=')) {
-            e.preventDefault();
-            zoomIn();
-        }
-        
-        if ((e.ctrlKey || e.metaKey) && e.key === '-') {
-            e.preventDefault();
-            zoomOut();
-        }
-        
-        // Ctrl + 0 to reset zoom
-        if ((e.ctrlKey || e.metaKey) && e.key === '0') {
-            e.preventDefault();
-            resetZoom();
-        }
-    });
+            // Keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                // Ctrl + F for search (when not in input field)
+                if ((e.ctrlKey || e.metaKey) && e.key === 'f' && e.target.tagName !== 'INPUT') {
+                    e.preventDefault();
+                    const searchBox = document.getElementById('searchBox');
+                    if (searchBox) {
+                        searchBox.focus();
+                    }
+                }
+                
+                // Escape key to close book
+                if (e.key === 'Escape' && state.currentBook) {
+                    closeBook();
+                }
+                
+                // Plus/Minus for zoom
+                if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '=')) {
+                    e.preventDefault();
+                    zoomIn();
+                }
+                
+                if ((e.ctrlKey || e.metaKey) && e.key === '-') {
+                    e.preventDefault();
+                    zoomOut();
+                }
+                
+                // Ctrl + 0 to reset zoom
+                if ((e.ctrlKey || e.metaKey) && e.key === '0') {
+                    e.preventDefault();
+                    resetZoom();
+                }
+            });
 
-    // Close modals when clicking outside
-    window.addEventListener('click', function(e) {
-        // Color picker modal
-        if (colorPickerModal && e.target === colorPickerModal) {
-            closeColorPicker();
-        }
-        
-        // Settings modal
-        const settingsModal = document.getElementById('settingsModal');
-        if (settingsModal && e.target === settingsModal) {
-            closeSettings();
-        }
-    });
+            // Close modals when clicking outside
+            window.addEventListener('click', function(e) {
+                // Color picker modal
+                if (colorPickerModal && e.target === colorPickerModal) {
+                    closeColorPicker();
+                }
+            });
 
-    // Initialize the application
-    init();
-});
+            // Click outside to close mobile controls
+            document.addEventListener('click', function(event) {
+                const controlsContainer = document.getElementById('controlsContainer');
+                const mobileControlsToggle = document.getElementById('mobileControlsToggle');
+                
+                if (window.innerWidth <= 768 && 
+                    controlsContainer && 
+                    controlsContainer.classList.contains('active') &&
+                    !controlsContainer.contains(event.target) && 
+                    mobileControlsToggle &&
+                    !mobileControlsToggle.contains(event.target)) {
+                    console.log('👆 Click outside - closing controls');
+                    controlsContainer.classList.remove('active');
+                    mobileControlsToggle.innerHTML = '<i class="fas fa-sliders-h"></i><span>සැකසුම්</span>';
+                }
+            });
 
-// Additional utility functions
-function formatTime(seconds) {
-    const hrs = Math.floor(seconds / 3600);
-    const mins = Math.floor((seconds % 3600) / 60);
-    const secs = Math.floor(seconds % 60);
-    
-    if (hrs > 0) {
-        return `${hrs}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-    } else {
-        return `${mins}:${secs.toString().padStart(2, '0')}`;
-    }
-}
-
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Export functions for global access (if needed)
-window.BookReader = {
-    openBook,
-    closeBook,
-    toggleFavorite,
-    toggleSidebar,
-    setTheme,
-    zoomIn,
-    zoomOut,
-    resetZoom,
-    searchBooks,
-    clearSearch,
-    toggleBookmarksView,
-    removeBookmark,
-    clearAllBookmarks
-};
-
-// Performance optimization: Lazy load images
-document.addEventListener('DOMContentLoaded', function() {
-    const lazyImages = document.querySelectorAll('img[data-src]');
-    
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.getAttribute('data-src');
-                img.removeAttribute('data-src');
-                imageObserver.unobserve(img);
-            }
+            // Initialize the application
+            init();
         });
-    });
 
-    lazyImages.forEach(img => imageObserver.observe(img));
-});
-
-// Error handling for iframe loading
-if (bookReader) {
-    bookReader.addEventListener('error', function() {
-        console.error('Failed to load book content');
-        alert('පොත පූරණය කිරීමට නොහැකි විය. කරුණාකර නැවත උත්සාහ කරන්න.');
-    });
-
-    bookReader.addEventListener('load', function() {
-        console.log('Book loaded successfully');
-    });
-}
-
-// Auto-save functionality
-setInterval(() => {
-    if (state.currentBook) {
-        const readingState = {
-            bookId: state.currentBook.id,
-            timestamp: new Date().toISOString(),
-            zoom: zoomLevel,
-            theme: currentTheme,
-            themeIntensity: themeIntensity
+        // Export functions for global access
+        window.BookReader = {
+            openBook,
+            closeBook,
+            toggleFavorite,
+            toggleSidebar,
+            setTheme,
+            zoomIn,
+            zoomOut,
+            resetZoom,
+            searchBooks,
+            clearSearch,
+            toggleBookmarksView,
+            removeBookmark,
+            clearAllBookmarks
         };
-        localStorage.setItem('lastReadingState', JSON.stringify(readingState));
-    }
-}, 30000); // Save every 30 seconds
 
-// Load last reading state
-function loadLastReadingState() {
-    try {
-        const lastState = JSON.parse(localStorage.getItem('lastReadingState'));
-        if (lastState) {
-            const bookElement = document.querySelector(`.book-link[data-id="${lastState.bookId}"]`);
-            if (bookElement) {
-                openBook(bookElement);
-                // Restore zoom and theme after a short delay
-                setTimeout(() => {
-                    if (lastState.zoom) {
-                        zoomLevel = lastState.zoom;
-                        applyZoom();
-                    }
-                    if (lastState.theme) {
-                        currentTheme = lastState.theme;
-                        themeIntensity = lastState.themeIntensity || 0;
-                        updateTheme();
-                    }
-                }, 1000);
-            }
-        }
-    } catch (error) {
-        console.log('Could not restore last reading state');
-    }
-}
-
-// Call this when the page loads if you want to restore last session
-// loadLastReadingState();
-
-console.log('📚 Book Reader JavaScript loaded successfully!');
-
-  </script>
-  <script>
-    // ___________mobile________toggle
-  // DOM Elements
-        
-        const mobileControlsToggle = document.getElementById('mobileControlsToggle');
-        const controlsContainer = document.getElementById('controlsContainer');
-
-        // Initialize
-        function init() {
-            updateBookmarksCount();
-            renderBookmarks();
-            loadBookmarkStates();
-            closeAllFolders();
-            updateSidebarState();
-            updateClock();
-            setInterval(updateClock, 1000);
-            loadTheme();
-            
-            // Load bookmarks view preference
-            const savedView = localStorage.getItem('bookmarksView') || 'grid';
-            state.bookmarksView = savedView;
-            updateBookmarksView();
-            
-            // Add event delegation for bookmark clicks
-            setupBookmarkEventDelegation();
-            
-            // Initialize search functionality
-            initSearch();
-            
-            // Initialize mobile controls
-            initMobileControls();
-            
-            console.log('📚 Book Reader initialized successfully!');
-        }
-
-        // MOBILE CONTROLS FUNCTIONS - FIXED VERSION
-        function initMobileControls() {
-            console.log('🔧 Initializing mobile controls...');
-            
-            if (mobileControlsToggle && controlsContainer) {
-                // Set initial state based on screen size
-                handleMobileControlsResize();
-                
-                console.log('✅ Mobile controls initialized successfully');
-            } else {
-                console.log('❌ Mobile controls elements not found');
-            }
-        }
-
-        function handleMobileControlsResize() {
-            if (!mobileControlsToggle || !controlsContainer) return;
-            
-            if (window.innerWidth > 768) {
-                // Desktop - show controls always
-                controlsContainer.style.display = 'flex';
-                controlsContainer.classList.remove('active');
-                mobileControlsToggle.style.display = 'none';
-            } else {
-                // Mobile - show toggle button, hide controls initially
-                controlsContainer.style.display = 'none';
-                controlsContainer.classList.remove('active');
-                mobileControlsToggle.style.display = 'flex';
-                mobileControlsToggle.innerHTML = '<i class="fas fa-sliders-h"></i><span>සැකසුම්</span>';
-            }
-        }
-
-        // FIXED TOGGLE FUNCTION
-        function toggleMobileControls() {
-            console.log('📱 Toggle mobile controls clicked!');
-            
-            if (!controlsContainer || !mobileControlsToggle) {
-                console.log('❌ Controls container or toggle button not found');
-                return;
-            }
-            
-            if (controlsContainer.classList.contains('active')) {
-                // Hide controls
-                controlsContainer.classList.remove('active');
-                controlsContainer.style.display = 'none';
-                mobileControlsToggle.innerHTML = '<i class="fas fa-sliders-h"></i><span>සැකසුම්</span>';
-                console.log('🔽 Mobile controls hidden');
-            } else {
-                // Show controls
-                controlsContainer.classList.add('active');
-                controlsContainer.style.display = 'flex';
-                mobileControlsToggle.innerHTML = '<i class="fas fa-times"></i><span>වසන්න</span>';
-                console.log('🔼 Mobile controls shown');
-            }
-        }
-// ________________________________
-
-// MODIFIED OPEN BOOK FUNCTION - Add mobile controls initialization here
-function openBook(element) {
-    const bookId = element.getAttribute('data-id');
-    const bookUrl = element.getAttribute('data-url');
-    const bookTitle = element.textContent.split('⭐')[0].trim();
-    
-    state.currentBook = {
-        id: bookId,
-        title: bookTitle,
-        url: bookUrl
-    };
-    
-    currentBookTitle.textContent = bookTitle;
-    bookReader.src = bookUrl;
-    
-    noBookSelected.style.display = 'none';
-    bookReaderContainer.style.display = 'block';
-    
-    // Initialize mobile controls when book is opened
-    console.log('📖 Book opened, initializing mobile controls...');
-    initMobileControls();
-    
-    // Reset zoom and themes
-    resetZoom();
-    currentTheme = 'none';
-    themeIntensity = 0;
-    updateTheme();
-    
-    if (window.innerWidth <= 768) {
-        sidebar.classList.remove('active');
-        toggleBtn.innerHTML = '☰';
-    }
-    
-    console.log(`📖 Opening: ${bookTitle}`);
-}
-
-// Event listeners for mobile controls
-window.addEventListener('resize', handleMobileControlsResize);
-
-// Click outside to close mobile controls
-document.addEventListener('click', function(event) {
-    const controlsContainer = document.getElementById('controlsContainer');
-    const mobileControlsToggle = document.getElementById('mobileControlsToggle');
-    
-    if (window.innerWidth <= 768 && 
-        controlsContainer && 
-        controlsContainer.classList.contains('active') &&
-        !controlsContainer.contains(event.target) && 
-        mobileControlsToggle &&
-        !mobileControlsToggle.contains(event.target)) {
-        console.log('👆 Click outside - closing controls');
-        controlsContainer.classList.remove('active');
-        mobileControlsToggle.innerHTML = '<i class="fas fa-sliders-h"></i><span>සැකසුම්</span>';
-    }
-});
-
-// Initialize mobile controls when page loads (for cases where book is already open)
-document.addEventListener('DOMContentLoaded', function() {
-    // Check if book reader is already visible and initialize mobile controls
-    if (bookReaderContainer.style.display !== 'none') {
-        setTimeout(initMobileControls, 100);
-    }
-});
-// _____refress button_____
-// REFRESH BOOK FUNCTION
-function refreshBook() {
-    if (state.currentBook) {
-        console.log('🔄 Refreshing book:', state.currentBook.title);
-        
-        // Show loading state
-        const refreshBtn = document.querySelector('.book-action-btn[onclick="refreshBook()"]');
-        if (refreshBtn) {
-            const originalHTML = refreshBtn.innerHTML;
-            refreshBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> අරන් එනවා...';
-            refreshBtn.disabled = true;
-            
-            // Refresh the iframe
-            const currentSrc = bookReader.src;
-            bookReader.src = '';
-            setTimeout(() => {
-                bookReader.src = currentSrc;
-                
-                // Restore button after 1 second
-                setTimeout(() => {
-                    refreshBtn.innerHTML = originalHTML;
-                    refreshBtn.disabled = false;
-                }, 1000);
-                
-            }, 300);
-        } else {
-            // Simple refresh without button animation
-            const currentSrc = bookReader.src;
-            bookReader.src = '';
-            setTimeout(() => {
-                bookReader.src = currentSrc;
-            }, 300);
-        }
-        
-        // Reset to first page if needed
-        setTimeout(() => {
-            goToBookHome();
-        }, 500);
-        
-    } else {
-        console.log('❌ No book selected to refresh');
-        alert('රිෆ්‍රෙෂ් කිරීමට පොතක් තෝරාගෙන නැත');
-    }
-}
-
-// ENHANCED VERSION WITH MORE FEATURES (Optional)
-function refreshBookEnhanced() {
-    if (!state.currentBook) {
-        alert('රිෆ්‍රෙෂ් කිරීමට පොතක් තෝරාගෙන නැත');
-        return;
-    }
-    
-    console.log('🔄 Refreshing book with enhanced features:', state.currentBook.title);
-    
-    const refreshBtn = event?.target || document.querySelector('.book-action-btn[onclick*="refreshBook"]');
-    let originalHTML = '';
-    let originalTitle = '';
-    
-    if (refreshBtn) {
-        originalHTML = refreshBtn.innerHTML;
-        originalTitle = refreshBtn.title || '';
-        refreshBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> අරන් එනවා...';
-        refreshBtn.title = 'පොත අරන් එනවා...';
-        refreshBtn.disabled = true;
-        
-        // Add rotation animation
-        refreshBtn.style.transition = 'transform 0.5s ease';
-        refreshBtn.style.transform = 'rotate(180deg)';
-    }
-    
-    // Store current state
-    const currentZoom = zoomLevel;
-    const currentThemeState = { theme: currentTheme, intensity: themeIntensity };
-    const currentSrc = bookReader.src;
-    
-    // Show loading indicator in iframe area
-    bookReader.style.opacity = '0.5';
-    bookReader.style.transition = 'opacity 0.3s ease';
-    
-    // Perform refresh
-    bookReader.src = '';
-    
-    setTimeout(() => {
-        bookReader.src = currentSrc;
-        bookReader.style.opacity = '1';
-        
-        // Restore previous state
-        setTimeout(() => {
-            zoomLevel = currentZoom;
-            applyZoom();
-            currentTheme = currentThemeState.theme;
-            themeIntensity = currentThemeState.intensity;
-            updateTheme();
-            
-            // Restore button
-            if (refreshBtn) {
-                setTimeout(() => {
-                    refreshBtn.innerHTML = originalHTML;
-                    refreshBtn.title = originalTitle;
-                    refreshBtn.disabled = false;
-                    refreshBtn.style.transform = 'rotate(0deg)';
-                }, 500);
-            }
-            
-            console.log('✅ Book refreshed successfully');
-            
-        }, 300);
-        
-    }, 500);
-}
-  </script>
-  <script>
-    // Auto reload for development
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/livereload-js@3.3.2/dist/livereload.js?snipver=1';
-        document.head.appendChild(script);
-        
-        console.log('Live reload enabled for development');
-    }
-    {
-  "html.preview.autoShow": true
-}
-</script>
-
+        console.log('📚 Book Reader JavaScript loaded successfully!');
+    </script>
 </body>
-
 </html>
-
